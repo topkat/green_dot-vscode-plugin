@@ -12,7 +12,8 @@
         "pretest": "npm run compile && npm run lint",
         "lint": "eslint src --ext ts",
         "test": "vscode-test",
-        "package": "tsc && vsce package"
+        "package": "tsc && vsce package",
+        "publish": "tsc && vsce publish"
     },
     "categories": [
         "Other"
