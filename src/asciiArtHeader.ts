@@ -44,8 +44,8 @@ const font = {
 // █◾◼▮▇◼█▀▔▃▄▅▆▂▁   ▀▄█
 
 export default () => {
-    vscode.commands.registerTextEditorCommand('coreVscodeModule.h1', async editor => header(editor, 'h1'))
-    vscode.commands.registerTextEditorCommand('coreVscodeModule.h2', async editor => header(editor, 'h2'))
+    vscode.commands.registerTextEditorCommand('coreVscodeModule.header1', async editor => header(editor, 'h1'))
+    vscode.commands.registerTextEditorCommand('coreVscodeModule.header2', async editor => header(editor, 'h2'))
 }
 
 
@@ -59,7 +59,7 @@ async function header(editor: vscode.TextEditor, hsize: 'h1' | 'h2') {
 
     const letters = textParsed.split('')
 
-    const selectedFont = hsize === 'h1' ? font.ainsiShadow : font.smallSoft
+    const selectedFont = hsize === 'h1' ? font.customSmall : font.smallSoft
     const nbLines = selectedFont.chars.length
 
     editor.selections.forEach((selection, i) => {

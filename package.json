@@ -1,12 +1,25 @@
 {
     "name": "green-dot-vscode-module",
-    "displayName": "GREEN DOT VSC PLUGIN",
-    "description": "This vscode module allow to generate back and front end file and modules for core project and highlight particular core syntaxes",
-    "version": "1.0.0",
-    "publisher": "TOPKΛT & j0j032",
+    "displayName": "🟢 green_dot VSCode Extension",
+    "description": "A VS Code extension that provides syntax highlight and helpers for green_dot projects",
+    "version": "1.0.1",
+    "publisher": "topkat",
     "main": "./out/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "vscode-test",
+        "package": "tsc && vsce package"
+    },
     "categories": [
         "Other"
+    ],
+    "authors": [
+        "topkat",
+        "j0j032"
     ],
     "activationEvents": [
         "onLanguage:javascript",
@@ -17,57 +30,20 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/top-kat/vscode-core-module.git"
+        "url": "https://github.com/topkat/green_dot-vscode-plugin"
     },
     "icon": "icon.png",
     "contributes": {
         "commands": [
             {
-                "command": "coreVscodeModule.generate",
-                "title": "Generate back end modules, services or models"
-            },
-            {
-                "command": "coreVscodeModule.h1",
+                "command": "coreVscodeModule.header1",
                 "title": "Write a H1 header as a ascii art comment"
             },
             {
-                "command": "coreVscodeModule.h2",
+                "command": "coreVscodeModule.header2",
                 "title": "Write a H2 header as a ascii art comment"
-            },
-            {
-                "command": "coreVscodeModule.showGitmoji",
-                "title": "Use custom gitmojis",
-                "icon": "$(smiley)"
             }
-        ],
-        "menus": {
-            "scm/title": [
-                {
-                    "when": "scmProvider == git",
-                    "command": "coreVscodeModule.showGitmoji",
-                    "group": "navigation"
-                }
-            ]
-        },
-        "configuration": {
-            "title": "core-vscode-module",
-            "properties": {
-                "core-vscode-module.mySetting": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": ""
-                }
-            }
-        }
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "pretest": "npm run compile && npm run lint",
-        "lint": "eslint src --ext ts",
-        "test": "vscode-test",
-        "package": "tsc && vsce package"
+        ]
     },
     "devDependencies": {
         "@types/mocha": "^10.0.6",
@@ -83,7 +59,7 @@
     "dependencies": {
         "glob": "^10.3.10",
         "simple-file-templater": "^1.0.2",
-        "topkat-utils": "^1.2.89"
+        "topkat-utils": "^1.3.19"
     },
     "engines": {
         "vscode": "^1.84.0"

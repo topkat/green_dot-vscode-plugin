@@ -92,10 +92,9 @@ const style = (style: keyof typeof styles, aditional: Parameters<typeof window.c
 
 const init = (fileName: string) => {
     regexpHighlight(/\/!\\/g, style('warningSign'))
-    regexpHighlightFirstCapturingGroup(/(TODO)/g, style('todo'))
-    regexpHighlightFirstCapturingGroup(/(DELETEME|TODELETE)/g, style('delete'))
-    regexpHighlight(/(?:\$\.throw|errors?)(?:\.|\[)[[\]A-Za-z0-9_]+/g, style('error'))
-    regexpHighlightFirstCapturingGroup(/(applicationError)\(/g, style('error'))
+    regexpHighlightFirstCapturingGroup(/(TODO|HACK)/g, style('todo'))
+    regexpHighlightFirstCapturingGroup(/(DELETEME|TODELETE|FIXME)/g, style('delete'))
+    regexpHighlight(/(?:ctx\.)?(?:error)(?:\.|\[)[[\]A-Za-z0-9_]+/g, style('error'))
     regexpHighlightFirstCapturingGroup(/(ctx.GM|ctx.system\(\))/g, style('godMode'))
 
     regexpHighlightFirstCapturingGroup(/Brico(Depot®)/ig, style('bricoDepot2'), style('bricoDepot1'))
