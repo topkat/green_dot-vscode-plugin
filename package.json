@@ -2,7 +2,7 @@
     "name": "green-dot-vscode-module",
     "displayName": "🟢 green_dot VSCode Extension",
     "description": "A VS Code extension that provides syntax highlight and helpers for green_dot projects",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "topkat",
     "main": "./out/extension.js",
     "scripts": {
